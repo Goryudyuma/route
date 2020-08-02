@@ -7,6 +7,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/analytics";
+import * as firebaseui from 'firebaseui'
 
 const firebaseConfig = {
     apiKey: "AIzaSyA-DWOLWcqAB4YJlwOlseYbi684m2jaVD0",
@@ -32,6 +33,18 @@ db.collection("users").onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
     });
+});
+
+let ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+        firebase.auth.GithubAuthProvider.PROVIDER_ID
+    ],
+});
+
+app.ports.login.subscribe(() => {
+
 });
 
 // If you want your app to work offline and load faster, you can change
