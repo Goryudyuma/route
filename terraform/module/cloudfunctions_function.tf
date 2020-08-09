@@ -13,7 +13,7 @@ resource "google_cloudfunctions_function" "AddUserAction" {
   }
 
   source_repository {
-    url = "https://source.developers.google.com/projects/route-063-jp/repos/github_goryudyuma_route/moveable-aliases/master/paths/functions"
+    url = "https://source.developers.google.com/projects/route-063-jp/repos/github_goryudyuma_route/moveable-aliases/${var.branch}/paths/functions"
   }
 
   ingress_settings = "ALLOW_ALL"

@@ -20,3 +20,9 @@ resource "null_resource" "terraform-github-actions" {
     value = "This resource was created using GitHub Actions!"
   }
 }
+
+module "functions" {
+  source = "./module"
+
+  branch = var.branch
+}
