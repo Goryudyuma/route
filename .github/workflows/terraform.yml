@@ -24,6 +24,9 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
+      - name: Terraform workspace new
+        run: terraform workspace new ${GITHUB_REF#refs/heads/}
+
       - name: Terraform Format
         run: terraform fmt -check
 
