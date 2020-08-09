@@ -24,5 +24,6 @@ resource "null_resource" "terraform-github-actions" {
 module "functions" {
   source = "./module"
 
-  branch = var.branch
+  count  = length(var.branches)
+  branch = element(var.branches, count.index)
 }
