@@ -1,6 +1,6 @@
 resource "google_cloudfunctions_function" "AddUserAction" {
   available_memory_mb = "256"
-  entry_point         = "AddUser"
+  entry_point         = "AddUser-${var.branch}"
 
   event_trigger {
     event_type = "providers/firebase.auth/eventTypes/user.create"
@@ -13,7 +13,7 @@ resource "google_cloudfunctions_function" "AddUserAction" {
   }
 
   source_repository {
-    url = "https://source.developers.google.com/projects/route-063-jp/repos/github_goryudyuma_route/moveable-aliases/master/paths/functions"
+    url = "https://source.developers.google.com/projects/route-063-jp/repos/github_goryudyuma_route/moveable-aliases/${var.branch}/paths/functions"
   }
 
   ingress_settings = "ALLOW_ALL"
