@@ -1,3 +1,3 @@
-variable "branches" {
-  type = list(string)
+variable "BRANCHES" {
+  type = set(string)
 }
