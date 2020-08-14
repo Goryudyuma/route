@@ -5,7 +5,7 @@ provider "google" {
 }
 
 terraform {
-  required_version = "0.12.29"
+  required_version = "0.13.0"
   backend "remote" {
     organization = "route-063-jp"
 
