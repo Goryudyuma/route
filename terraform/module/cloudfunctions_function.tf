@@ -23,7 +23,7 @@ resource "google_cloudfunctions_function" "AddUserAction" {
   }
 
   max_instances         = "0"
-  name                  = "AddUserAction"
+  name                  = "AddUserAction-${var.branch}"
   project               = "route-063-jp"
   region                = "us-central1"
   runtime               = "go113"
