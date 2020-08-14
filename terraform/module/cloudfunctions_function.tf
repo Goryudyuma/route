@@ -1,6 +1,6 @@
 resource "google_cloudfunctions_function" "AddUserAction" {
   available_memory_mb = "256"
-  entry_point         = "AddUser"
+  entry_point         = "AddUser-${var.branch}"
 
   event_trigger {
     event_type = "providers/firebase.auth/eventTypes/user.create"

@@ -1,7 +1,7 @@
 provider "google" {
   project = "route-063-jp"
   region  = "asia-northeast1"
-  version = "v3.34.0"
+  version = "~> 3.34.0"
 }
 
 terraform {
